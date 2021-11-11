@@ -25,6 +25,7 @@ runs:
       shell: bash
       env:
         VERSION: ${{ inputs.version }}
+    - run: go mod vendor
     - run: $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
       env:
