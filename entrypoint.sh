@@ -33,4 +33,4 @@ if [ -n "$cmd" ]; then
 fi
 echo "Will run mutation tests on $TARGETS"
 
-go-mutesting "$TARGETS" "$cmd"
+/usr/local/go/bin/go-mutesting "$TARGETS" "$cmd"
