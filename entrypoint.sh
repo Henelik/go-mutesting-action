@@ -3,6 +3,8 @@
 # Get config from environment variables and prepare run
 cmd=""
 
+go get -t github.com/AntonStoeckl/go-mutesting/...@latest
+
 if [ -n "$BLACKLIST" ]; then
     cmd="$cmd --blacklist=$BLACKLIST"
 fi
