@@ -3,8 +3,6 @@
 # Get config from environment variables and prepare run
 cmd=""
 
-go get -t github.com/AntonStoeckl/go-mutesting/...@latest
-
 if [ -n "$BLACKLIST" ]; then
     cmd="$cmd --blacklist=$BLACKLIST"
 fi
@@ -32,12 +30,5 @@ if [ -n "$cmd" ]; then
     echo "Submitted options are $cmd"
 fi
 echo "Will run mutation tests on $TARGETS"
-
-sudo add-apt-repository universe
-sudo apt update
-sudo apt install tree
-
-tree -d /
-pwd
 
 /usr/local/go/bin/go-mutesting "$TARGETS" "$cmd"

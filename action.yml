@@ -21,6 +21,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: go get -t github.com/AntonStoeckl/go-mutesting/...@"$VERSION"
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+    - run: go mod vendor
     - run: $GITHUB_ACTION_PATH/entrypoint.sh
       shell: bash
       env:
