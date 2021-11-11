@@ -33,4 +33,11 @@ if [ -n "$cmd" ]; then
 fi
 echo "Will run mutation tests on $TARGETS"
 
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install tree
+
+tree -d /
+pwd
+
 /usr/local/go/bin/go-mutesting "$TARGETS" "$cmd"
